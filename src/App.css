@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;700;900&family=Urbanist:wght@300;600&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,22 +8,17 @@
     font-family: 'Urbanist', sans-serif;
 }
 
-
-
-
-html{
+html {
     font-size: 62.5%;
 }
 
-
-a{
+a {
     text-decoration: none;
 }
 
-li{
+li {
     list-style: none;
 }
-
 
 main {
     display: flex;
@@ -31,15 +26,16 @@ main {
     align-items: center;
     min-height: 100vh;
     margin-top: 10rem;
+    animation: fadeIn 1s ease-in-out;
 }
 
-main h2{
+main h2 {
     font-size: 3rem;
     font-family: 'Lexend Deca', sans-serif;
     margin-bottom: 4.8rem;
 }
 
-main h2 .icons{
+main h2 .icons {
     color: #68B984;
 }
 
@@ -47,22 +43,24 @@ main h2 .icons{
 /*navbar styling */
 /*====================*/
 
-nav{
-    width:55rem ;
+nav {
+    width: 55rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: .1rem solid gray;
+    animation: slideDown 1s ease-in-out;
 }
 
-nav a{
+nav a {
     font-size: 2rem;
     font-family: 'Lexend Deca', sans-serif;
     color: gray;
     border-bottom: .3rem solid transparent;
+    transition: border-color 0.3s, color 0.3s;
 }
 
-nav a:hover{
+nav a:hover {
     border-color: #3A3845;
 }
 
@@ -75,7 +73,7 @@ nav a.active {
 /*Form  styling */
 /*====================*/
 
-form input{
+form input {
     border: .1rem solid gray;
     border-radius: .3rem;
     width: 45rem;
@@ -85,20 +83,27 @@ form input{
     font-size: 1.6rem;
     letter-spacing: .06rem;
     font-weight: bold;
+    transition: border-color 0.3s;
 }
 
-form button{
+form button {
     padding: .8rem 2.8rem;
     border: none;
     border-radius: .3rem;
     font-weight: bold;
     cursor: pointer;
     margin-left: 2.4rem;
-     background-color: #68B984;
-     color: #fff;
+    background-color: #68B984;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-label{
+form button:hover {
+    background-color: #5aa76a;
+    transform: scale(1.05);
+}
+
+label {
     font-size: 1.5rem;
     letter-spacing: .06rem;
     color: #3A3845;
@@ -109,36 +114,158 @@ label{
 /*todo task list */
 /*====================*/
 
-.main-task li{
+.main-task li {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    width:50rem;
+    width: 50rem;
     min-height: 6rem;
     border-bottom: .1rem solid gray;
+    animation: fadeIn 1s ease-in-out;
 }
 
-.main-task li:first-child{
+.main-task li:first-child {
     border-top: .1rem solid gray;
 }
 
-.main-task li:hover{
+.main-task li:hover {
     background-color: #fef2f2;
 }
 
-.main-task li input[type="checkbox"]:checked  + label {
+.main-task li input[type="checkbox"] {
+    transition: all 0.3s;
+}
+
+.main-task li input[type="checkbox"]:checked + label {
     text-decoration: line-through;
     color: #D14D72;
 }
 
-.main-task li button{
+.main-task li button {
     padding: .6rem 1rem;
     width: 7rem;
     background-color: #D14D72;
     color: #FFF9F9;
-    border:none;
+    border: none;
     display: inline-block;
     cursor: pointer;
     justify-self: center;
     letter-spacing: .1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.main-task li button:hover {
+    background-color: #c03955;
+    transform: scale(1.05);
+}
+
+/*===================*/
+/* Responsive Design */
+/*====================*/
+
+@media (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+
+    nav {
+        width: 100%;
+        padding: 1rem;
+        border-bottom: .1rem solid gray;
+    }
+
+    nav a {
+        font-size: 1.8rem;
+    }
+
+    form input {
+        width: 100%;
+        font-size: 1.4rem;
+    }
+
+    form button {
+        margin-left: 1rem;
+        padding: .6rem 2rem;
+        font-size: 1.4rem;
+    }
+
+    .main-task li {
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 1rem;
+    }
+
+    .main-task li button {
+        width: auto;
+        padding: .4rem 1rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 45%;
+    }
+
+    main {
+        margin-top: 5rem;
+    }
+
+    main h2 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    form input {
+        font-size: 1.2rem;
+    }
+
+    form button {
+        padding: .6rem 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .main-task li {
+        grid-template-columns: 1fr;
+        font-size: 1.2rem;
+    }
+
+    .main-task li button {
+        width: 100%;
+        padding: .4rem;
+    }
+}
+
+/*===================*/
+/* Keyframes */
+/*====================*/
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
