@@ -9,7 +9,7 @@
 }
 
 
-/*// thapa technical SUBSCRIBE*/
+
 
 html{
     font-size: 62.5%;
@@ -52,13 +52,13 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: .1rem solid #ccc;
+    border-bottom: .1rem solid gray;
 }
 
 nav a{
     font-size: 2rem;
     font-family: 'Lexend Deca', sans-serif;
-    color: #ccc;
+    color: gray;
     border-bottom: .3rem solid transparent;
 }
 
@@ -76,7 +76,7 @@ nav a.active {
 /*====================*/
 
 form input{
-    border: .1rem solid #ccc;
+    border: .1rem solid gray;
     border-radius: .3rem;
     width: 45rem;
     margin: 4rem 0;
@@ -115,11 +115,11 @@ label{
     align-items: center;
     width:50rem;
     min-height: 6rem;
-    border-bottom: .1rem solid #ccc;
+    border-bottom: .1rem solid gray;
 }
 
 .main-task li:first-child{
-    border-top: .1rem solid #ccc;
+    border-top: .1rem solid gray;
 }
 
 .main-task li:hover{
